@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -95,5 +92,15 @@ public class ScreenBounds : MonoBehaviour {
     private static bool IsYOutOfBounds(Vector2 worldPosition) {
         // note: the following logic works only when bounds min equals bounds max!
         return Mathf.Abs(worldPosition.y) > Mathf.Abs(boxCollider.bounds.min.y);
+    }
+
+    /// <summary>
+    /// Get random Vector2 position within bounds. 
+    /// </summary>
+    public static Vector2 GetRandomPosition() {
+        return new Vector2(
+            Random.Range(boxCollider.bounds.min.x, boxCollider.bounds.max.x),
+            Random.Range(boxCollider.bounds.min.y, boxCollider.bounds.max.y)
+            );
     }
 }
