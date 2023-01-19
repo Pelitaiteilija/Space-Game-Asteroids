@@ -1,11 +1,11 @@
 {
-    "name": "BaseGame",
+    "name": "LevelObjects",
     "rootNamespace": "",
-    "references": [],
-    "includePlatforms": [],
-    "excludePlatforms": [
-        "Editor"
+    "references": [
+        "GUID:ab19d2eb2db527846b1d653dba7e9425"
     ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
     "precompiledReferences": [],

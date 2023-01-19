@@ -1,3 +1,18 @@
 {
-	"name": "PlayerShip"
+    "name": "PlayerShip",
+    "rootNamespace": "",
+    "references": [
+        "GUID:e184b4a5570b935489c6ed4a37729384",
+        "GUID:ab19d2eb2db527846b1d653dba7e9425",
+        "GUID:7e9273fb74286cf43bb3fbb93f2fa1a5"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
