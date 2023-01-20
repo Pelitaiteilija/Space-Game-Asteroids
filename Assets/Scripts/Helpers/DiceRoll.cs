@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DiceRoll
-{
-    public int rolls    { get; private set; }
-    public int sides    { get; private set; }
+public class DiceRoll {
+    public int rolls { get; private set; }
+    public int sides { get; private set; }
     public int modifier { get; private set; }
 
     /// <summary>
@@ -40,11 +39,15 @@ public class DiceRoll
     /// <returns></returns>
     public static int Roll(int rolls, int sides, int modifier = 0) {
         int result = modifier;
+        if (sides <= 0) return modifier;
         for (int i = 0; i < rolls; i++) {
             result += Random.Range(1, sides);
         }
         return result;
     }
 
+    public string GetValueRange() {
+        return $"{(sides > 0 ? rolls : 0) + modifier}-{rolls * sides + modifier}";
+    }
 
 }

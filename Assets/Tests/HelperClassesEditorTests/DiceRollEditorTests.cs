@@ -4,7 +4,7 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-public class DiceRollTests {
+public class DiceRollEditorTests {
     // A Test behaves as an ordinary method
     [Test]
     public void DiceRollTests_StaticRolls_SimplePasses() {
