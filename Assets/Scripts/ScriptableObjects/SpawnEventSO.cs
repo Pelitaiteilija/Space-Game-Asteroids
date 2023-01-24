@@ -14,4 +14,5 @@ public class SpawnEventSO : ScriptableObject
     public void Spawn(Transform target) {
 
     }
+
 }

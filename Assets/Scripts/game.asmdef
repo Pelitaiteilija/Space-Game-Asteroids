@@ -1,5 +1,5 @@
 {
-    "name": "LevelObjects",
+    "name": "game",
     "rootNamespace": "",
     "references": [
         "GUID:ab19d2eb2db527846b1d653dba7e9425"

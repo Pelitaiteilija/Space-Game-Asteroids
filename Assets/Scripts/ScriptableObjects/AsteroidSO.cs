@@ -25,4 +25,5 @@ public class AsteroidSO : ScriptableObject {
         return spawnGoodiesOnDestroyed[Random.Range(0, spawnObjectsOnDestroyed.Count)];
     }
 
+
 }
