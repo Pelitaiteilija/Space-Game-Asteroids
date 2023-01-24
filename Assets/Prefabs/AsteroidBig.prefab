@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3835063452299141401}
   - component: {fileID: -5828162849583025254}
   m_Layer: 0
-  m_Name: Asteroid
+  m_Name: AsteroidBig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoints: 10
+  data: {fileID: 11400000, guid: 3d35ff4cafef6d7469bae76406973739, type: 2}
 --- !u!58 &3835063452299141402
 CircleCollider2D:
   m_ObjectHideFlags: 0

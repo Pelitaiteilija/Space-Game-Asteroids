@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance;
 
     private static int asteroidsCount = 0;
+    private bool isQuitting = false;
 
     [SerializeField]
     GameObject asteroidObject;
@@ -30,6 +31,16 @@ public class GameManager : MonoBehaviour {
     void Update() {
         asteroids = asteroidsCount;
 
+        if (asteroidsCount == 0 && !isQuitting)
+        {
+            SpawnAsteroids(Random.Range(1, 5));
+        }
+
+    }
+
+    public void OnApplicationQuit()
+    {
+        isQuitting = true;
     }
 
     public static void AsteroidCountIncrement() {
@@ -42,9 +53,7 @@ public class GameManager : MonoBehaviour {
             asteroidsCount = 0;
             Debug.LogWarning("asteroidsCount was negative!");
         }
-        if(asteroidsCount == 0) {
-            SpawnAsteroids(Random.Range(1, 5));
-        }
+
     }
 
     public static void SpawnAsteroids(int count) {

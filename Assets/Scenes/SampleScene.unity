@@ -292,6 +292,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3835063452299141405, guid: d450ddece35dbf84a92270910ea53416, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d35ff4cafef6d7469bae76406973739, type: 2}
     - target: {fileID: 3835063452299141406, guid: d450ddece35dbf84a92270910ea53416, type: 3}
       propertyPath: m_Name
       value: Asteroid (2)
@@ -344,7 +348,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -438,6 +442,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3835063452299141405, guid: d450ddece35dbf84a92270910ea53416, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d35ff4cafef6d7469bae76406973739, type: 2}
     - target: {fileID: 3835063452299141406, guid: d450ddece35dbf84a92270910ea53416, type: 3}
       propertyPath: m_Name
       value: Asteroid (1)
@@ -476,14 +484,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   die:
-    diceRoll: 1d12
+    diceRoll: 1d6
   dice:
   - diceRoll: 1d6
-  - diceRoll: 1d12
-  - diceRoll: 1d12-6
-  - diceRoll: 6d2-3
-  - diceRoll: 4d6
-  - diceRoll: 42
+  - diceRoll: 1d6
+  - diceRoll: 1d6
+  - diceRoll: 1d6
+  - diceRoll: 1d6
+  - diceRoll: 1d6
 --- !u!4 &2109857204
 Transform:
   m_ObjectHideFlags: 0
@@ -665,6 +673,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3835063452299141405, guid: d450ddece35dbf84a92270910ea53416, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d35ff4cafef6d7469bae76406973739, type: 2}
     - target: {fileID: 3835063452299141406, guid: d450ddece35dbf84a92270910ea53416, type: 3}
       propertyPath: m_Name
       value: Asteroid

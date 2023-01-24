@@ -1,5 +1,4 @@
 using System.Text.RegularExpressions;
-using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
@@ -9,8 +8,27 @@ public class DiceNotation {
     public DiceRoll diceToRoll { get; private set; }
 
     public int rollDice() {
-        int result = 0;
-        result = diceToRoll.Roll();
+        if (diceToRoll == null)
+            Init();
+        if (diceRoll == null)
+        {
+            Debug.LogError($"Invalid DiceNotation input {diceRoll}");
+            return 0;
+        }
+        return diceToRoll.Roll();
+    }
+
+    public void Init()
+    {
+        if(diceRoll != null)
+            SetDiceIfValid(diceRoll);
+    }
+
+    public bool SetDiceIfValid(string input)
+    {
+        DiceRoll roll;
+        bool result = DiceNotation.ValidateStringAsDiceRoll(input, out roll);
+        if(result) diceToRoll = roll;
         return result;
     }
 

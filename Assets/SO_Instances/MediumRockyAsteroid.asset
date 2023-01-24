@@ -10,12 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebb499abcb54d234eaf13fcf02858be6, type: 3}
-  m_Name: RockAsteroid_Big
+  m_Name: MediumRockyAsteroid
   m_EditorClassIdentifier: 
-  <maxHitpoints>k__BackingField: 10
+  <maxHitpoints>k__BackingField: 5
   <sprite>k__BackingField: {fileID: 0}
-  scale: 3.05
-  <spawnObjectsOnDestroyed>k__BackingField:
-  - {fileID: 11400000, guid: 375dffd653c24024093d5be312024671, type: 2}
-  - {fileID: 11400000, guid: 375dffd653c24024093d5be312024671, type: 2}
+  scale: 1.5
+  <spawnObjectsOnDestroyed>k__BackingField: []
   <spawnGoodiesOnDestroyed>k__BackingField: []
