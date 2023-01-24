@@ -19,6 +19,21 @@ public class DiceRoll {
         this.modifier = modifier;
     }
 
+    public DiceRoll(string diceNotation) {
+        DiceRoll diceRoll;
+        if (DiceNotation.ValidateStringAsDiceRoll(diceNotation, out diceRoll)) {
+            this.rolls =    diceRoll.rolls;
+            this.sides =    diceRoll.sides;
+            this.modifier = diceRoll.modifier;
+        }
+        else {
+            Debug.LogError($"Can't create a diceroll from string '{diceNotation}'!");
+            rolls = 1;
+            sides = 1;
+            modifier = 0;
+        }
+    }
+
     /// <summary>
     /// Throw the dice defined by a DiceRoll object and return the sum of the result.
     /// If the modifier is negative, the result may be negative as well.
@@ -47,7 +62,7 @@ public class DiceRoll {
     }
 
     public string GetValueRange() {
-        return $"{(sides > 0 ? rolls : 0) + modifier}-{rolls * sides + modifier}";
+        return $"{(sides > 0 ? rolls : 0) + modifier} – {rolls * sides + modifier}";
     }
 
 }
