@@ -9,8 +9,18 @@ public class Asteroid : MonoBehaviour, IAmDamageable {
     [SerializeField]
     private float hitpoints = 10f;
 
+    private AsteroidSO data;
+
     private Vector2 movement = Vector2.zero;
     private float rotation;
+
+    void Awake() {
+        if (data == null) {
+            Debug.LogError("Asteroid has no Asteroid SO data, variable is null!");
+        }
+        hitpoints = data.maxHitpoints;
+        // data.sprite
+    }
 
     // Start is called before the first frame update
     void Start() {
@@ -35,6 +45,11 @@ public class Asteroid : MonoBehaviour, IAmDamageable {
     public void OnDestroy() {
         Debug.Log("Asteroid destroyed");
         GameManager.AsteroidCountDecrease();
+        if (data.spawnObjectsOnDestroyed.Count > 0) {
+            
+        }
+        if (data.spawnGoodiesOnDestroyed.Count > 0) {
+        }
     }
 }
 
