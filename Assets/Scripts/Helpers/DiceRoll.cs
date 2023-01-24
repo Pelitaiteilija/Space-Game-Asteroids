@@ -53,10 +53,10 @@ public class DiceRoll {
     /// <param name="modifier"></param>
     /// <returns></returns>
     public static int Roll(int rolls, int sides, int modifier = 0) {
-        int result = modifier;
         if (sides <= 0) return modifier;
+        int result = modifier;
         for (int i = 0; i < rolls; i++) {
-            result += Random.Range(1, sides);
+            result += Random.Range(1, sides+1);
         }
         return result;
     }
