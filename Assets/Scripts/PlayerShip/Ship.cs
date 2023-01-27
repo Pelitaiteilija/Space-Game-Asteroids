@@ -15,6 +15,8 @@ public class Ship : MonoBehaviour
     [SerializeField]
     private float breakForce = 0.5f;
 
+    private Vector2 movementVector = Vector2.zero;
+
     private ShipStats shipStats;
 
     private void Awake()
@@ -44,7 +46,12 @@ public class Ship : MonoBehaviour
         }
 
         transform.Rotate(Vector3.back, shipRotation);
-        transform.Translate(transform.up * shipThrust, Space.World);
+
+        movementVector += (Vector2) (transform.up * shipThrust * Time.deltaTime);
+        movementVector *= 1.0f - (0.5f * Time.deltaTime);
+
+        //transform.Translate(transform.up * shipThrust, Space.World);
+        transform.Translate(movementVector, Space.World);
 
         if(Mathf.Abs(shipThrust) < 0.05f ) {
             shipStats.ReplaceStat(Stats.attackSpeed, 3.0f);
