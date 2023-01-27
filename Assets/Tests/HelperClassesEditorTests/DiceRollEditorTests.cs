@@ -55,6 +55,9 @@ public class DiceRollEditorTests {
             TestRollWithMultiples(10, 2, 0);
             TestRollWithMultiples(10, 3, 0);
             TestRollWithMultiples(10, 4, 0);
+
+            TestIfAllSidesAppear(1, 2);
+            TestIfAllSidesAppear(1, 2);
         }
         Debug.Log("Dice tests done");
     }
@@ -75,6 +78,33 @@ public class DiceRollEditorTests {
         int result = DiceRoll.Roll(rolls, sides, modifier);
         Assert.GreaterOrEqual(result, rolls + modifier);
         Assert.LessOrEqual(result, (rolls*sides) + modifier);
+    }
+
+    public void TestIfAllSidesAppear(int dice, int sides, int modifier = 0)
+    {
+        int repetitions = sides * 100;
+        int[] results = new int[sides];
+        int i;
+        for(i = 0; i < results.Length; i++)
+        {
+            results[i]= 0;
+        }
+
+        for(i = 0; i < repetitions; i++)
+        {
+            int result = DiceRoll.Roll(dice, sides, modifier);
+            // the value should always be >= 0
+            Assert.Greater(result, 0);
+            results[result - 1 - modifier]++;
+        }
+
+        foreach(int var in results)
+        {
+            // Check that out of n*100 results, each of the sides of the dice was rolled at least once
+            // This will rarely return false due to randomness, but the likelihood is very small
+            Assert.Greater(var, 0);
+        }
+
     }
 
 }
