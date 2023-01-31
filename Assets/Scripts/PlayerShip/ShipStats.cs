@@ -4,16 +4,29 @@ using UnityEngine;
 
 public class ShipStats : MonoBehaviour, IHaveStats {
 
-    [field: SerializeField]
-    public int attackPower { get; private set; } = 3;
-    [field: SerializeField]
-    public float attackSpeed { get; private set; } = 1.0f;
-    [field: SerializeField]
-    public int hullPoints { get; private set; } = 3;
-    [field: SerializeField]
-    public float movementMultiplier { get; private set; } = 1.0f;
-    [field: SerializeField]
-    public float rotationMultiplier { get; private set; } = 1.0f;
+    [SerializeField]
+    ShipStats_SO shipStats_SO;
+
+    public int attackPower { get; private set; }
+    public float attackSpeed { get; private set; } 
+    public int hullPoints { get; private set; }
+    public float movementMultiplier { get; private set; }
+    public float rotationMultiplier { get; private set; }
+
+    public void Awake() {
+        ResetStats();
+    }
+
+    public void ResetStats() {
+        if(shipStats_SO == null) {
+            Debug.LogError("Ship has no ShipStats_SO scriptable object!");
+        }
+        attackPower = shipStats_SO.attackPower;
+        attackSpeed = shipStats_SO.attackSpeed;
+        hullPoints = shipStats_SO.hullPoints;
+        movementMultiplier = shipStats_SO.movementMultiplier;
+        rotationMultiplier = shipStats_SO.rotationMultiplier;
+    }
 
     public void ChangeStat(Stats targetStat, float amount)
     {
