@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <maxHitpoints>k__BackingField: 2
   <sprite>k__BackingField: {fileID: 0}
-  scale: 3.05
+  <scale>k__BackingField: 3.05
+  <scaleVariation>k__BackingField: 0.3
   <spawnObjectsOnDestroyed>k__BackingField:
   - {fileID: 11400000, guid: 375dffd653c24024093d5be312024671, type: 2}
   - {fileID: 11400000, guid: 375dffd653c24024093d5be312024671, type: 2}

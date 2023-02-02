@@ -26,6 +26,7 @@ public class Asteroid : MonoBehaviour, IAmDamageable
             Debug.LogError("Asteroid has no Asteroid SO data, variable is null!");
         }
         hitpoints = data.maxHitpoints;
+        transform.localScale = Vector3.one * (data.scale + Random.Range(-data.scaleVariation, data.scaleVariation));
         // data.sprite
     }
 
@@ -34,6 +35,7 @@ public class Asteroid : MonoBehaviour, IAmDamageable
     {
         movement = new Vector2(Random.Range(-3f, 3f), Random.Range(-3f, 3f));
         rotation = Random.Range(-120, 120);
+
         GameManager.AsteroidCountIncrement();
     }
 
