@@ -229,7 +229,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecc73267bcafbe46b2138dcfd2983e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &648198941
+--- !u!61 &648198948
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648198930}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &648198949
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -371,8 +397,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1708968515}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6671093, y: 0.27624112, z: 0.103666745}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.6671095, y: 0.27624112, z: 0.10366674}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -388,9 +414,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1708968515}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccf0d45967958404e998eea5bb9d577a, type: 3}
+  m_Script: {fileID: 11500000, guid: e5c812480fbf91d4f8fd9f435c8db58c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetZoom: 0
+--- !u!1 &1985211498 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1737436951943546886, guid: bec257bc608d8e64a8a21832c7c1e367, type: 3}
+  m_PrefabInstance: {fileID: 71625814544810044}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1985211500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985211498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30dfdf21402e7d24eb11e4ae1cd7379f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponSO: {fileID: 11400000, guid: a1fae8aa57325844c8c3b2de70860425, type: 2}
 --- !u!1001 &2029497662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -614,9 +659,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8181340317077350436, guid: bec257bc608d8e64a8a21832c7c1e367, type: 3}
       propertyPath: <cooldown>k__BackingField
-      value: 0.66
+      value: 0.16
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8181340317077350436, guid: bec257bc608d8e64a8a21832c7c1e367, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bec257bc608d8e64a8a21832c7c1e367, type: 3}
 --- !u!1001 &3835063452689178503
 PrefabInstance:
