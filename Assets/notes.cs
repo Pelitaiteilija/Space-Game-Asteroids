@@ -3,7 +3,7 @@ public class notes
 }
 /*
  * 
- *      ZOOM OUT FOR FURTHER LEVELS
+ *      ZOOM OUT FOR FURTHER LEVELS -> DONE
  *      
  *  Implement a system where the game can zoom in or out, and level bounds are updated with this change. 
  *  Also look into supporting changing aspect ratios (e.g. windowed game's size is changed), and check if 
