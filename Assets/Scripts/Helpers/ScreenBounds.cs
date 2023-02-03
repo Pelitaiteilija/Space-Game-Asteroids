@@ -38,17 +38,16 @@ public class ScreenBounds : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        // set camera position to zero
-        transform.position = Vector3.zero;
         UpdateBoundsSize();
     }
 
-    private void UpdateBoundsSize() {
+    public void UpdateBoundsSize() {
+        // set camera position to zero
+        transform.position = Vector3.zero;
         // orhographicSize = half the height of the screen
         float ySize = mainCamera.orthographicSize * 2;
         // width is calculate by multiplying y with aspect ratio
         boxCollider.size = new Vector2(ySize * mainCamera.aspect, ySize);
-
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
