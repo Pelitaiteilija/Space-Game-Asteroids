@@ -33,6 +33,14 @@ public class ShipWeaponHandler : MonoBehaviour, ICanHaveWeapons
         updateWeapons();
     }
 
+    public void updateWeapons()
+    {
+        foreach (Weapon weapon in weapons)
+        {
+            weapon.Tick(Time.deltaTime * shipStats.attackSpeed, ship.movementVector);
+        }
+    }
+
     public void addWeapon(Weapon weapon)
     {
         if (!weapons.Contains(weapon))
@@ -44,11 +52,5 @@ public class ShipWeaponHandler : MonoBehaviour, ICanHaveWeapons
         weapons.Clear();
     }
 
-    public void updateWeapons()
-    {
-        foreach (Weapon weapon in weapons)
-        {
-            weapon.Tick(Time.deltaTime * shipStats.attackSpeed, ship.CalculateThrust());
-        }
-    }
+
 }
