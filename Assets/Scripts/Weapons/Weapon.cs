@@ -2,26 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Weapon : MonoBehaviour
+public class Weapon : MonoBehaviour
 {
-    [field: SerializeField]
     private float timer = 0f;
 
-    [field: SerializeField]
-    public float cooldown { get; private set; } = 0.5f;
+    [SerializeField]
+    private WeaponSO weaponSO;
 
-    public void Tick(float tickTime, float shipThrust)
+    public void Awake()
     {
-        timer += tickTime;
-        if(timer >= cooldown)
-        {
-            timer = 0f;
-            Activate(shipThrust);
+        if(weaponSO == null) {
+            this.enabled= false;
+            Debug.LogError("Weapon has no Weapon SO, add a scriptable object!");
         }
     }
 
-    public virtual void Activate(float shipThrust)
+    public void Tick(float tickTime, Vector2 shipMovement)
     {
+        timer += tickTime;
+        if(timer >= weaponSO.cooldown)
+        {
+            timer = 0;
+            Activate(shipMovement);
+        }
+    }
 
+    public virtual void Activate(Vector2 shipMovement)
+    {
+        weaponSO.Activate(transform, shipMovement);
     }
 }
