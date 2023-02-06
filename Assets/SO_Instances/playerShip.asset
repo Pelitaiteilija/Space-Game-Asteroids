@@ -16,4 +16,4 @@ MonoBehaviour:
   <attackSpeed>k__BackingField: 3
   <hullPoints>k__BackingField: 3
   <movementMultiplier>k__BackingField: 1
-  <rotationMultiplier>k__BackingField: 1
+  <rotationMultiplier>k__BackingField: 2.5
