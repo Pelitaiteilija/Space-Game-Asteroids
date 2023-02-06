@@ -267,6 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf0d45967958404e998eea5bb9d577a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyWhenOutsideOfBounds: 0
 --- !u!1001 &681673706
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -581,8 +582,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32fe1ed6200f9c441995623bde4a55b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroidObject: {fileID: 3835063452299141406, guid: d450ddece35dbf84a92270910ea53416, type: 3}
+  asteroidSet: {fileID: 11400000, guid: 38ef0e3c2110e854f96b187808938f71, type: 2}
   asteroids: 0
+  asteroidObject: {fileID: 3835063452299141406, guid: d450ddece35dbf84a92270910ea53416, type: 3}
 --- !u!4 &2113346098
 Transform:
   m_ObjectHideFlags: 0
@@ -657,12 +659,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8181340317077350436, guid: bec257bc608d8e64a8a21832c7c1e367, type: 3}
-      propertyPath: <cooldown>k__BackingField
-      value: 0.16
-      objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 8181340317077350436, guid: bec257bc608d8e64a8a21832c7c1e367, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: bec257bc608d8e64a8a21832c7c1e367, type: 3}
 --- !u!1001 &3835063452689178503
 PrefabInstance:

@@ -5,14 +5,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
     public static GameManager instance;
 
-    private static int asteroidsCount = 0;
+    [field: SerializeField]
+    public GameObjectRuntimeSet asteroidSet;
+
+    public int asteroids;
     private bool isQuitting = false;
 
     [SerializeField]
     GameObject asteroidObject;
-
-    [SerializeField]
-    int asteroids;
 
     private void Awake() {
         if (instance == null)
@@ -22,16 +22,11 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    // Start is called before the first frame update
-    void Start() {
-
-    }
-
     // Update is called once per frame
     void Update() {
-        asteroids = asteroidsCount;
+        asteroids = asteroidSet.Count;
 
-        if (asteroidsCount == 0 && !isQuitting)
+        if (asteroidSet.Count == 0 && !isQuitting)
         {
             SpawnAsteroids(Random.Range(1, 5));
         }
@@ -41,19 +36,6 @@ public class GameManager : MonoBehaviour {
     public void OnApplicationQuit()
     {
         isQuitting = true;
-    }
-
-    public static void AsteroidCountIncrement() {
-        asteroidsCount++;
-    }
-
-    public static void AsteroidCountDecrease() {
-        asteroidsCount--;
-        if (asteroidsCount < 0) {
-            asteroidsCount = 0;
-            Debug.LogWarning("asteroidsCount was negative!");
-        }
-
     }
 
     public static void SpawnAsteroids(int count) {

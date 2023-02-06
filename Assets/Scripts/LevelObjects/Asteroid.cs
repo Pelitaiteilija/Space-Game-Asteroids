@@ -35,8 +35,6 @@ public class Asteroid : MonoBehaviour, IAmDamageable
     {
         movement = new Vector2(Random.Range(-3f, 3f), Random.Range(-3f, 3f));
         rotation = Random.Range(-120, 120);
-
-        GameManager.AsteroidCountIncrement();
     }
 
     // Update is called once per frame
@@ -62,7 +60,6 @@ public class Asteroid : MonoBehaviour, IAmDamageable
     public void OnDestroy()
     {
         Debug.Log("Asteroid destroyed");
-        GameManager.AsteroidCountDecrease();
         if (data.spawnObjectsOnDestroyed.Count > 0 && !_isQuitting)
         {
             int number = Random.Range(0, data.spawnObjectsOnDestroyed.Count);

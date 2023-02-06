@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3271354406360318125}
-  - component: {fileID: 8181340317077350436}
+  - component: {fileID: -7994402206662238339}
   m_Layer: 0
   m_Name: PewPewGun
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8181340317077350436
+--- !u!114 &-7994402206662238339
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1737436951943546886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea95506d200b24e4f929608e7370e517, type: 3}
+  m_Script: {fileID: 11500000, guid: 30dfdf21402e7d24eb11e4ae1cd7379f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 6803776896539602834, guid: 2ba8c5f8ab4a3214e882b34d0d1449bd, type: 3}
+  weaponSO: {fileID: 11400000, guid: a1fae8aa57325844c8c3b2de70860425, type: 2}
