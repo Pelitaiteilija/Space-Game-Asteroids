@@ -343,6 +343,7 @@ GameObject:
   - component: {fileID: 1708968517}
   - component: {fileID: 1708968516}
   - component: {fileID: 1708968519}
+  - component: {fileID: 1708968520}
   m_Layer: 0
   m_Name: Bounds
   m_TagString: Untagged
@@ -362,9 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 632657b47b9f54e4ca22c86268505282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExitTriggerFired:
-    m_PersistentCalls:
-      m_Calls: []
+  BoundsOffset: 0.3
 --- !u!61 &1708968517
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -419,6 +418,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetZoom: 0
+  viewZoomerSO: {fileID: 11400000, guid: 5937f6a4aefc5714fbb4b26fb85f5e17, type: 2}
+--- !u!114 &1708968520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708968515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6886f83b3a248134f8e87255a099135a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5e48dd426fb19d14280f504b62df2dd2, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1708968519}
+        m_TargetAssemblyTypeName: ViewZoomer, helpers
+        m_MethodName: ChangeZoomTarget
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1985211498 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1737436951943546886, guid: bec257bc608d8e64a8a21832c7c1e367, type: 3}
@@ -529,15 +557,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6f2a8d3584d5f64ebafffa4368c323e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  die:
-    diceRoll: 1d6
-  dice:
-  - diceRoll: 1d6
-  - diceRoll: 1d6
-  - diceRoll: 1d6
-  - diceRoll: 1d6
-  - diceRoll: 1d6
-  - diceRoll: 1d6
 --- !u!4 &2109857204
 Transform:
   m_ObjectHideFlags: 0
@@ -563,6 +582,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2113346098}
   - component: {fileID: 2113346097}
+  - component: {fileID: 2113346099}
+  - component: {fileID: 2113346100}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -582,6 +603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32fe1ed6200f9c441995623bde4a55b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnAsteroidsEvent: {fileID: 11400000, guid: 5e48dd426fb19d14280f504b62df2dd2, type: 2}
   asteroidSet: {fileID: 11400000, guid: 38ef0e3c2110e854f96b187808938f71, type: 2}
   asteroids: 0
   asteroidObject: {fileID: 3835063452299141406, guid: d450ddece35dbf84a92270910ea53416, type: 3}
@@ -600,6 +622,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2113346099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113346096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6886f83b3a248134f8e87255a099135a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5e48dd426fb19d14280f504b62df2dd2, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2113346097}
+        m_TargetAssemblyTypeName: GameManager, game
+        m_MethodName: SpawnAsteroids
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2113346100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113346096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b13b680107ab8438d60f9029e9326f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  event7: {fileID: 0}
+  event8: {fileID: 0}
+  event9: {fileID: 11400000, guid: 5e48dd426fb19d14280f504b62df2dd2, type: 2}
+  event0: {fileID: 0}
 --- !u!1001 &71625814544810044
 PrefabInstance:
   m_ObjectHideFlags: 0

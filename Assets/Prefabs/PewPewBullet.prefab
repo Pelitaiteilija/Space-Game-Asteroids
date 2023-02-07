@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf0d45967958404e998eea5bb9d577a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyWhenOutsideOfBounds: 0
 --- !u!61 &-5452794811960377185
 BoxCollider2D:
   m_ObjectHideFlags: 0
