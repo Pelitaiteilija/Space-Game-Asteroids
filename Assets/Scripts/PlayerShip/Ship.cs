@@ -52,7 +52,7 @@ public class Ship : MonoBehaviour
         // vector value is halved every second
         movementVector *= 1.0f - (0.5f * Time.deltaTime);
 
-        Debug.Log($"movementVector {movementVector}");
+        //Debug.Log($"movementVector {movementVector}");
         transform.Translate(movementVector * Time.deltaTime, Space.World);
     }
 }
