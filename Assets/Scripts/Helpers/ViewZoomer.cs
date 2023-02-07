@@ -6,6 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(ScreenBounds))]
 public class ViewZoomer : MonoBehaviour
 {
+    private Camera mainCamera;
+
     [SerializeField]
     float targetZoom;
 
@@ -17,6 +19,7 @@ public class ViewZoomer : MonoBehaviour
 
     private void Awake()
     {
+        mainCamera = Camera.main;
         bounds = GetComponent<ScreenBounds>();
         if (viewZoomerSO == null) { 
             Debug.LogError("ViewZoomer is missing a viewZoomerSO object!");
@@ -33,13 +36,13 @@ public class ViewZoomer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        targetZoom = Camera.main.orthographicSize;
+        targetZoom = mainCamera.orthographicSize;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float orthoSize = Camera.main.orthographicSize;
+        float orthoSize = mainCamera.orthographicSize;
 
         // inputs
         HandleManualzoom();
@@ -55,7 +58,7 @@ public class ViewZoomer : MonoBehaviour
             orthoSize = targetZoom;
         }
 
-        Camera.main.orthographicSize = orthoSize;
+        mainCamera.orthographicSize = orthoSize;
         bounds.UpdateBoundsSize();
     }
 
