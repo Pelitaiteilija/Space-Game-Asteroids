@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,11 +9,25 @@ public class ViewZoomer : MonoBehaviour
     [SerializeField]
     float targetZoom;
 
+    [SerializeField]
+    ViewZoomerSO viewZoomerSO;
+
+    private float minimumZoom, maximumZoom;
     ScreenBounds bounds;
 
     private void Awake()
     {
         bounds = GetComponent<ScreenBounds>();
+        if (viewZoomerSO == null) { 
+            Debug.LogError("ViewZoomer is missing a viewZoomerSO object!");
+            minimumZoom = 1f;
+            maximumZoom = 20f;
+        }
+        else
+        {
+            minimumZoom = viewZoomerSO.minimumZoom;
+            maximumZoom = viewZoomerSO.maximumZoom;
+        }
     }
 
     // Start is called before the first frame update
@@ -44,11 +59,17 @@ public class ViewZoomer : MonoBehaviour
         bounds.UpdateBoundsSize();
     }
 
+    public void ChangeZoomTarget(float target)
+    {
+        SetZoomTarget(targetZoom + target);
+    }
+
     public void SetZoomTarget(float target)
     {
         targetZoom = target;
-        if(targetZoom < 1f)
-            targetZoom = 1f;
+        // make sure value stays within constraints
+        targetZoom = Mathf.Min(maximumZoom, targetZoom);
+        targetZoom = Mathf.Max(minimumZoom, targetZoom);
     }
 
     private void HandleManualzoom()
