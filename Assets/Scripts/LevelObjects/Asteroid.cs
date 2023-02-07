@@ -49,7 +49,10 @@ public class Asteroid : MonoBehaviour, IAmDamageable
         // Debug.Log($"Asteroid was hit and took {amount} damage!");
         hitpoints -= amount;
         if (hitpoints <= 0)
+        {
+            SpawnOnDestroyed();
             Destroy(gameObject);
+        }
     }
 
     public void OnApplicationQuit()
@@ -57,16 +60,15 @@ public class Asteroid : MonoBehaviour, IAmDamageable
         _isQuitting = true;
     }
 
-    public void OnDestroy()
+    public void SpawnOnDestroyed()
     {
-        Debug.Log("Asteroid destroyed");
         if (data.spawnObjectsOnDestroyed.Count > 0 && !_isQuitting)
         {
             int number = Random.Range(0, data.spawnObjectsOnDestroyed.Count);
             SpawnEventSO spawnEvent = data.spawnObjectsOnDestroyed[number];
             spawnEvent.amount.Init();
             int amount = spawnEvent.amount.rollDice();
-            Debug.Log($"Spawning {amount} asteroids");
+            //Debug.Log($"Spawning {amount} asteroids");
             for (int i = 0; i < amount; i++)
             {
                 Instantiate(
@@ -84,7 +86,6 @@ public class Asteroid : MonoBehaviour, IAmDamageable
         }
     }
 }
-
 
 public enum AsteroidSizeTier
 {
