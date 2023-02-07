@@ -15,4 +15,4 @@ MonoBehaviour:
   <speed>k__BackingField: 15
   <damage>k__BackingField: 2
   <lifetime>k__BackingField: 2
-  <destroyWhenOutOfBounds>k__BackingField: 0
+  <destroyWhenOutOfBounds>k__BackingField: 1

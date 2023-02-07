@@ -18,5 +18,4 @@ MonoBehaviour:
   <scaleVariation>k__BackingField: 0.3
   <spawnObjectsOnDestroyed>k__BackingField:
   - {fileID: 11400000, guid: 375dffd653c24024093d5be312024671, type: 2}
-  - {fileID: 11400000, guid: 375dffd653c24024093d5be312024671, type: 2}
   <spawnGoodiesOnDestroyed>k__BackingField: []
