@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
     public static GameManager instance;
+
+    [SerializeField]
+    private GameEvent spawnAsteroidsEvent;
 
     [field: SerializeField]
     public GameObjectRuntimeSet asteroidSet;
@@ -28,7 +32,7 @@ public class GameManager : MonoBehaviour {
 
         if (asteroidSet.Count == 0 && !isQuitting)
         {
-            SpawnAsteroids(Random.Range(1, 5));
+            spawnAsteroidsEvent.Raise();
         }
 
     }
@@ -39,7 +43,17 @@ public class GameManager : MonoBehaviour {
     }
 
     public static void SpawnAsteroids(int count) {
+        if (count <= 0) return;
         for (int i = 0; i < count; i++) {
+            Instantiate(instance.asteroidObject, ScreenBounds.GetRandomPosition(), Quaternion.identity);
+        }
+    }
+
+    public static void SpawnAsteroids()
+    {
+        int count = Random.Range(1, 5);
+        for (int i = 0; i < count; i++)
+        {
             Instantiate(instance.asteroidObject, ScreenBounds.GetRandomPosition(), Quaternion.identity);
         }
     }
