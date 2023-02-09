@@ -65,4 +65,14 @@ public class DiceRoll {
         return $"{(sides > 0 ? rolls : 0) + modifier} – {rolls * sides + modifier}";
     }
 
+    public override string ToString()
+    {
+        string textModifier = "";
+        if (modifier < 0)
+            textModifier = modifier.ToString();
+        else if (modifier > 0)
+            textModifier = $"+{modifier}";
+        
+        return $"{rolls}d{sides}{textModifier}";
+    }
 }

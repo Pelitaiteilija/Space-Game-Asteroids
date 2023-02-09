@@ -87,7 +87,7 @@ public class DiceNotation {
                 return false;
             }
         }
-        //Debug.Log($"output successful: {rolls}d{sides}+ {modifier}");
+        //Debug.Log($"output successful: {roll.ToString()}");
         if (modifierIsNegative)
             modifier *= -1;
         output = new DiceRoll(rolls, sides, modifier);
