@@ -4,11 +4,14 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-public class DiceRollEditorTests {
-    // A Test behaves as an ordinary method
+public class DiceRollSimpleRandomValueTests{
+
+    /// <summary>
+    /// Test that dice rolls are between given minimum and maximum values
+    /// </summary>
     [Test]
-    public void DiceRollTests_StaticRolls_SimplePasses() {
-        Debug.Log("Dice tests started");
+    public void DiceRollTests_MinMaxValueTestCases() {
+        Debug.Log("<color=yellow>Testing that dice roll values are between given minimum and maximum values...</color>\n");
         for (int i = 0; i < 100; i++) {
             int result = -1;
             // test simplest case
@@ -56,10 +59,11 @@ public class DiceRollEditorTests {
             TestRollWithMultiples(10, 3, 0);
             TestRollWithMultiples(10, 4, 0);
 
-            TestIfAllSidesAppear(1, 2);
-            TestIfAllSidesAppear(1, 2);
+            // moved to DiceRollStatisticalRandomValueTests class
+            // TestIfAllSidesAppear(1, 2);
+            // TestIfAllSidesAppear(1, 2);
         }
-        Debug.Log("Dice tests done");
+        Debug.Log("<color=#33FF99>Test complete, dice roll results fall within expected ranges.</color>\n");
     }
 
     public void TestRoll(int maxValue) {

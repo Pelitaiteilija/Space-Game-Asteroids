@@ -6,12 +6,15 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
+using static UnityEditor.Graphs.Styles;
 
-public class DiceRollRandomValueTests
+public class DiceRollStatisticalRandomValueTests
 {
     [Test]
-    public void DiceRollRandomValueTestCases()
+    public void DiceRollTests_RandomResultTestCases()
     {
+        // These tests are similar to tests run in DiceRollSimpleRandomValueTests,
+        // used here to make sure values are within expected array ranges
         CheckDiceValueRange(new DiceRoll(1, 2, 0), 1, 2);
         CheckDiceValueRange(new DiceRoll(2, 2, 0), 2, 4);
         CheckDiceValueRange(new DiceRoll(1, 6, 0), 1, 6);
@@ -19,6 +22,8 @@ public class DiceRollRandomValueTests
         CheckDiceValueRange(new DiceRoll(1, 2, 10), 11, 12);
         CheckDiceValueRange(new DiceRoll(20, 6, -10), 10, 110);
 
+        Debug.Log("<color=yellow>Starting test, performing simple statistical analysis for diceroll results...</color>\n");
+        // statistical analysis of a small set of dicerolls
         CheckDiceResultVariation(new DiceRoll(1, 2, 0));
         CheckDiceResultVariation(new DiceRoll(1, 2, 10));
         CheckDiceResultVariation(new DiceRoll(1, 2, -100));
@@ -27,8 +32,10 @@ public class DiceRollRandomValueTests
         CheckDiceResultVariation(new DiceRoll(3, 2, 5));
         CheckDiceResultVariation(new DiceRoll(10, 2, 100));
         CheckDiceResultVariation(new DiceRoll(3, 10, 0));
+        Debug.Log("<color=#33FF99>Statistical analysis tests completed successfully!\nCheck specific tests above to see a visualized graph of results. </color>");
     }
 
+    
     public void CheckDiceValueRange(DiceRoll roll, int minimum, int maximum)
     {
         int rollValue;
@@ -95,7 +102,7 @@ public class DiceRollRandomValueTests
         // possible results  234  | 678   |  123456   |  -101234
 
         // Uncomment to test, NOTE: outputs over 15k characters...
-        // Debug.Log($"Finding array position for value {result} in {roll.rolls}d{roll.sides}+{roll.modifier}, should be {result - roll.rolls - roll.modifier}");
+        // Debug.Log($"Finding array position for value {result} in {roll.ToString()}, should be {result - roll.rolls - roll.modifier}");
         return result - roll.rolls - roll.modifier;
     }
 
@@ -134,7 +141,7 @@ public class DiceRollRandomValueTests
     private void DrawResultGraph(DiceRoll roll, int repeats, int[] resultArray)
     {
 
-        string values = $"Testing array {roll.rolls}d{roll.sides}+{roll.modifier} with {repeats} rolls:\nDrawing result graph... (works best in monospace)\n\n";
+        string values = $"Testing array <color=yellow>{roll.ToString()} with {repeats} rolls:</color>\nDrawing graph... (works better with monospace text)\n\n";
         for (int i = 0; i < resultArray.Length; i++)
         {
 

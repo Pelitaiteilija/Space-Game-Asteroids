@@ -4,12 +4,15 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-public class DiceNotationEditorTests
+/// <summary>
+/// Test that dice notation formats are read correctly
+/// </summary>
+public class DiceNotationFormatComprehensionTests
 {
-    // A Test behaves as an ordinary method
     [Test]
-    public void DiceNotationEditorTestCases()
+    public void DiceNotationTests_FormatcomprehensionTestCases()
     {
+        Debug.Log("<color=yellow>Testing dice notation format comprehension, i.e. if the text '2d6-5' is interpreted as a correct DiceRoll</color>\n");
         // Use the Assert class to test conditions
         DiceRoll result;
 
@@ -34,6 +37,8 @@ public class DiceNotationEditorTests
         CompareTwoDiceRolls(new DiceRoll(100, 10), result);
         DiceNotation.ValidateStringAsDiceRoll("10d10-1010", out result);
         CompareTwoDiceRolls(new DiceRoll(10, 10, -1010), result);
+
+        Debug.Log("<color=#33FF99>Dice notation format tests were passed successfully.</color>\n");
     }
 
     public void CompareTwoDiceRolls(DiceRoll a, DiceRoll b)
