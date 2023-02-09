@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour {
     private bool isQuitting = false;
 
     [SerializeField]
-    GameObject asteroidObject;
+    GameObject[] asteroidObject;
 
     private void Awake() {
         if (instance == null)
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour {
     public static void SpawnAsteroids(int count) {
         if (count <= 0) return;
         for (int i = 0; i < count; i++) {
-            Instantiate(instance.asteroidObject, ScreenBounds.GetRandomPosition(), Quaternion.identity);
+            Instantiate(instance.asteroidObject[Random.Range(0, instance.asteroidObject.Length)], ScreenBounds.GetRandomPosition(), Quaternion.identity);
         }
     }
 
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour {
         int count = Random.Range(1, 5);
         for (int i = 0; i < count; i++)
         {
-            Instantiate(instance.asteroidObject, ScreenBounds.GetRandomPosition(), Quaternion.identity);
+            Instantiate(instance.asteroidObject[Random.Range(0, instance.asteroidObject.Length)], ScreenBounds.GetRandomPosition(), Quaternion.identity);
         }
     }
 }

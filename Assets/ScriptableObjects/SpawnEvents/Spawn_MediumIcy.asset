@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f6b8813d6607164f818a5cc667034a1, type: 3}
-  m_Name: Spawn_FewMediumRocks
+  m_Name: Spawn_MediumIcy
   m_EditorClassIdentifier: 
   <objectToSpawn>k__BackingField: {fileID: 3835063452299141406, guid: 9afa636cd765f7444a85bd7f92c3cd62, type: 3}
   <amount>k__BackingField:
-    diceRoll: 3d2-1
+    diceRoll: 4d2
