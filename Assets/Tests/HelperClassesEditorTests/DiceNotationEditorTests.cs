@@ -8,14 +8,14 @@ public class DiceNotationEditorTests
 {
     // A Test behaves as an ordinary method
     [Test]
-    public void DiceNotationEditorTestsSimplePasses()
+    public void DiceNotationEditorTestCases()
     {
         // Use the Assert class to test conditions
         DiceRoll result;
 
         // 1d6, 1d6+4, 2d6-2, 
         DiceNotation.ValidateStringAsDiceRoll("1d6", out result);
-        CompareTwoDiceRolls(new DiceRoll(1,6) , result);
+        CompareTwoDiceRolls(new DiceRoll(1, 6), result);
         DiceNotation.ValidateStringAsDiceRoll("1d6+4", out result);
         CompareTwoDiceRolls(new DiceRoll(1, 6, 4), result);
         DiceNotation.ValidateStringAsDiceRoll("2d6-2", out result);
@@ -36,9 +36,51 @@ public class DiceNotationEditorTests
         CompareTwoDiceRolls(new DiceRoll(10, 10, -1010), result);
     }
 
-    public void CompareTwoDiceRolls (DiceRoll a, DiceRoll b) {
+    public void CompareTwoDiceRolls(DiceRoll a, DiceRoll b)
+    {
         Assert.AreEqual(a.rolls, b.rolls);
         Assert.AreEqual(a.sides, b.sides);
         Assert.AreEqual(a.modifier, b.modifier);
     }
+
+    public void CheckDiceValueRange(DiceRoll roll, int minimum, int maximum)
+    {
+        int rollValue;
+        for (int i = 0; i < 100; i++)
+        {
+            rollValue = roll.Roll();
+            Assert.GreaterOrEqual(rollValue, minimum);
+            Assert.LessOrEqual(rollValue, maximum);
+        }
+    }
+
+    public void CheckDiceResultVariation(DiceRoll roll)
+    {
+        int[] resultArray = new int[roll.rolls * roll.sides];
+        int rollValue;
+        // repeat 100 to 5000 times
+        int repeats = Mathf.Min(
+                        Mathf.Max(
+                            100,
+                            roll.rolls * 50),
+                        5000);
+        for (int i = 0; i < 100; i++)
+        {
+            rollValue = roll.Roll();
+            resultArray[FindResultArrayPosition(roll, rollValue)]++;
+        }
+        Debug.Log(resultArray);
+
+        foreach (int value in resultArray)
+        {
+            Assert.Greater(value, 0);
+        }
+    }
+
+    public int FindResultArrayPosition(DiceRoll roll, int result)
+    {
+        int maximumPossiblevalue = roll.rolls * roll.sides + roll.modifier;
+        return maximumPossiblevalue - result;
+    }
+
 }
