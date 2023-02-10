@@ -72,6 +72,9 @@ public class ScreenBounds : MonoBehaviour {
         Vector2 signVector = new Vector2(Mathf.Sign(worldPosition2D.x), Mathf.Sign(worldPosition2D.y));
         Vector2 offset = new Vector2(boundsOffset * 0.5f, boundsOffset * 0.5f);
 
+        // TODO: logic breaks down if asteroid is out of bounds AND not moving inwards
+
+
         // out in both X and Y
         if (isXOutOfBounds && isYOutOfBounds) {
             //offset *= signVector;
