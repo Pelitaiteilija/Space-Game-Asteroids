@@ -8,7 +8,9 @@ public class Asteroid : MonoBehaviour, IAmDamageable
 {
     public AsteroidSizeTier size { get; private set; } = AsteroidSizeTier.Large;
 
-    private bool _isQuitting;
+    // used to prevent instantiating of object into Editor mode scene
+    private bool isQuitting;
+    private bool isAlive = true;
 
     [SerializeField]
     private float hitpoints = 10f;
@@ -33,6 +35,7 @@ public class Asteroid : MonoBehaviour, IAmDamageable
     // Start is called before the first frame update
     void Start()
     {
+        isAlive = true;
         movement = new Vector2(Random.Range(-3f, 3f), Random.Range(-3f, 3f));
         rotation = Random.Range(-120, 120);
     }
@@ -48,21 +51,30 @@ public class Asteroid : MonoBehaviour, IAmDamageable
     {
         // Debug.Log($"Asteroid was hit and took {amount} damage!");
         hitpoints -= amount;
-        if (hitpoints <= 0)
+        if (isAlive && hitpoints <= 0)
         {
             SpawnOnDestroyed();
-            Destroy(gameObject);
+            isAlive = false;
+            HandleAsteroidDestruction();
         }
     }
 
     public void OnApplicationQuit()
     {
-        _isQuitting = true;
+        isQuitting = true;
+    }
+
+    public void HandleAsteroidDestruction()
+    {
+        isAlive = false;
+        Destroy(gameObject);
     }
 
     public void SpawnOnDestroyed()
     {
-        if (data.spawnObjectsOnDestroyed.Count > 0 && !_isQuitting)
+        // use isQuitting to make sure objects are not spawned while the game is moving from Play mode to Editor mode
+        // otherwise, asteroids might be added in the Editor scene!
+        if (data.spawnObjectsOnDestroyed.Count > 0 && !isQuitting)
         {
             int number = Random.Range(0, data.spawnObjectsOnDestroyed.Count);
             SpawnEventSO spawnEvent = data.spawnObjectsOnDestroyed[number];
