@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(ScreenBounds))]
@@ -10,6 +8,9 @@ public class ViewZoomer : MonoBehaviour
 
     [SerializeField]
     float targetZoom;
+    [SerializeField]
+    [Range(0.01f, 1f)]
+    float zoomSpeedMultiplier = 0.1f;
 
     [SerializeField]
     ViewZoomerSO viewZoomerSO;
@@ -51,7 +52,7 @@ public class ViewZoomer : MonoBehaviour
         if (orthoSize == targetZoom)
             return;
 
-        orthoSize = Mathf.Lerp(orthoSize, targetZoom, Time.deltaTime);
+        orthoSize = Mathf.Lerp(orthoSize, targetZoom, Time.deltaTime * zoomSpeedMultiplier);
 
         if (Mathf.Abs(targetZoom - orthoSize) < 0.01f)
         {
