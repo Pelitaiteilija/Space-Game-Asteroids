@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: BasicPewPewGun
   m_EditorClassIdentifier: 
   <cooldown>k__BackingField: 0.4
+  <weaponName>k__BackingField: PewPew
   bullet: {fileID: 6803776896539602834, guid: 2ba8c5f8ab4a3214e882b34d0d1449bd, type: 3}
