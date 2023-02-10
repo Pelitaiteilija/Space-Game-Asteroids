@@ -1,5 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(ShipStats))]
@@ -24,7 +24,7 @@ public class ShipWeaponHandler : MonoBehaviour, ICanHaveWeapons
         {
             addWeapon(weapon);
         }
-        Debug.Log($"List of weapons on ship: {weapons.ToString()}");
+        Debug.Log($"List of weapons on ship: {string.Join(", ", weapons.Select(s => s.ToString()))}");
     }
 
     // Update is called once per frame
