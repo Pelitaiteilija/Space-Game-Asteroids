@@ -31,4 +31,14 @@ public class Weapon : MonoBehaviour
     {
         weaponSO.Activate(transform, shipMovement);
     }
+
+    public string GetWeaponName()
+    {
+        return weaponSO.weaponName;
+    }
+
+    public override string ToString()
+    {
+        return GetWeaponName();
+    }
 }
