@@ -45,13 +45,27 @@ This is the first project where I designed its event system architecture myself;
 
 Instead of default Unity events, I ended up mostly using event "channels" based on Scriptable Objects, which make it easy to make modular, extendable and with automatically managed dependencies. 
 
+### Scriptable Object Event System
+
 Events are assets in the asset folder that can be added to GameObjects, and which can be used to call specific functions of the game object's components by using Unity's built-in event system.
+
+![ScriptableObject events as assets](./GitDocs/events.png)
+
+A simple script called Game Event Listener can be attached to any Game Object, and it can be made to listen to any of the predefined event assets.
 
 ![Game Event listener component](./GitDocs/game_event_listener.png)
 
-Example code that raises an event when there are no asteroids left on the screen.
+Here's a piece of code that raises an event when there are no asteroids left on the screen. When this event is raised, all GameObjects react to the event. 
 
-![Screenshot of sample code](./GitDocs/raise_event_spawnasteroids.png)
+```csharp
+void Update() {
+	if(asteroidSet.Count == 0) {
+		spawnAsteroidsEvent.Raise();
+	}
+}
+```
+
+This way, game objects can be decoupled from each other. Even if two game objects don't initially exist in the same scene, they can both interact with the same event system. Once they're brought to the same scene, they automatically start interacting with each other. 
 
 ## C# Tests
 
