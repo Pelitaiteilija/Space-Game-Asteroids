@@ -27,7 +27,7 @@
 
 This is the first project where I used Scriptable Objects. I generated new base Scriptable Object classes, and use them to hold information about various game objects, such as player-controlled ship's basic stats, and stats of different types of weapons and asteroids.
 
-I also use some of the features explained in the Unite 2017 talk (Game Architecture with Scriptable Objects)[https://www.youtube.com/watch?v=raQ3iHhE_Kk].
+I also use some of the features explained in the Unite 2017 talk [Game Architecture with Scriptable Objects](https://www.youtube.com/watch?v=raQ3iHhE_Kk).
 
 ### Runtime Sets
 
