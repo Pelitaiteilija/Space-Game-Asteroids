@@ -12,15 +12,15 @@
 
  This project is a practice project where I learn what's new in Unity since 2016 or so. Some of my personal learning goals were: 
 
- - Learning about Scriptable Objects
- - Becoming more familiar with the C# event system
- - Learning about writing C# tests for a Unity project
- - Learning about new programming patterns 
- - Learning new and recommended UI workflows 
- - Learning new and recommended Input workflows
- - Learning about other new and recommended Unity workflows, systems and changes
- - Becoming more familiar with selecting the most suitable programming patterns for Unity projects
- - Becoming more familiar with using Git version control with Unity projects
+ 1. Learning about Scriptable Objects
+ 1. Becoming more familiar with the C# event system
+ 1. Learning about writing C# tests for a Unity project
+ 1. Learning about new programming patterns 
+ 1. Learning new and recommended UI workflows 
+ 1. Learning new and recommended Input workflows
+ 1. Learning about other new and recommended Unity workflows, systems and changes
+ 1. Becoming more familiar with selecting the most suitable programming patterns for Unity projects
+ 1. Becoming more familiar with using Git version control with Unity projects
 
 
 ## Scriptable Objects
@@ -55,7 +55,7 @@ Example code that raises an event when there are no asteroids left on the screen
 
 ## C# Tests
 
-![Video demonstrating diceroll tests](./GitDocs/diceroll_unity_tests.mp4)
+[![Video demonstrating diceroll tests](./GitDocs/unity_tests_thumbnail.png)](./GitDocs/diceroll_unity_tests.mp4)
 
 I learned about writing basic tests for Unity using Unity's Test Framework package and TestRunner. 
 
