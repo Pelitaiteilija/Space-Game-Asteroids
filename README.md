@@ -9,28 +9,27 @@
 
  ## Contents
 
- ### [Project goals](#project-goals)
- ### [Scriptable Objects](#scriptable-objects)
- #### [Runtime SetsObjects](#runtime-sets)
- ### [C# Event System](#c-event-system)
- #### [Scriptable Object Event System](#scriptable-object-event-system)
- ### [C# Tests](#c-tests)
- #### [Diceroll tests](#diceroll-tests)
+ 1. [Project goals](#project-goals)
+ 1. [Scriptable Objects](#scriptable-objects)
+    - [Runtime SetsObjects](#runtime-sets)
+ 1. [C# Event System](#c-event-system)
+    - [Scriptable Object Event System](#scriptable-object-event-system)
+ 1. [C# Tests](#c-tests)
+    - [Diceroll tests](#diceroll-tests)
 
 
   # Project goals
 
  This project is a practice project where I learn what's new in Unity since 2016 or so. Some of my personal learning goals were: 
 
- 1. Learning about Scriptable Objects
- 1. Becoming more familiar with the C# event system
- 1. Learning about writing C# tests for a Unity project
- 1. Learning about new programming patterns 
- 1. Learning new and recommended UI workflows 
- 1. Learning new and recommended Input workflows
- 1. Learning about other new and recommended Unity workflows, systems and changes
- 1. Becoming more familiar with selecting the most suitable programming patterns for Unity projects
- 1. Becoming more familiar with using Git version control with Unity projects
+- [x] Learning about Scriptable Objects
+- [x] Becoming more familiar with the C# event system
+- [x] Learning about writing C# tests for a Unity project
+- [ ] Learning new and recommended UI workflows 
+- [ ] Learning new and recommended Input workflows
+- [ ] Learning about other new and recommended Unity workflows, systems and changes
+- [x] Becoming more familiar with selecting the most suitable programming patterns for Unity projects
+- [x] Becoming more familiar with using Git version control with Unity projects
 
 
 ## Scriptable Objects
