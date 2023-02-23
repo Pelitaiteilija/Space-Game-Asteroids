@@ -7,6 +7,17 @@
 
  If you're interested in the development process, you can also check the [version history](version_history.md) page.
 
+ ## Contents
+
+ ### [Project goals](#project-goals)
+ ### [Scriptable Objects](#scriptable-objects)
+ #### [Runtime SetsObjects](#runtime-sets)
+ ### [C# Event System](#c-event-system)
+ #### [Scriptable Object Event System](#scriptable-object-event-system)
+ ### [C# Tests](#c-tests)
+ #### [Diceroll tests](#diceroll-tests)
+
+
   # Project goals
 
  This project is a practice project where I learn what's new in Unity since 2016 or so. Some of my personal learning goals were: 
