@@ -55,11 +55,17 @@ Example code that raises an event when there are no asteroids left on the screen
 
 ## C# Tests
 
-[![Video demonstrating diceroll tests](./GitDocs/unity_tests_thumbnail.png)](./GitDocs/diceroll_unity_tests.mp4)
+![Image of diceroll tests](./GitDocs/unity_tests_thumbnail.png)
 
 I learned about writing basic tests for Unity using Unity's Test Framework package and TestRunner. 
 
+### Diceroll tests
+
 I wrote a few different tests for the DiceRoll helper class which takes a string and outputs a random number based on the parameters defined by the string, using the tabletop RPG diceroll notation. 
+
+<video controls="" width="800" height="500" muted="" loop="" autoplay="">
+<source src="./GitDocs/diceroll_unity_tests.mp4" type="video/mp4">
+</video>
 
 For example, e.g. "1d6" generates a random number from 1 to 6 (inclusive), and 2d6 generates two numbers 1-6 and sums them together, giving a total range or results from 2 to 12, with 7 being the most common result.
 
