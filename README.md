@@ -27,7 +27,7 @@
 
 This is the first project where I used Scriptable Objects. I generated new base Scriptable Object classes, and use them to hold information about various game objects, such as player-controlled ship's basic stats, and stats of different types of weapons and asteroids.
 
-I also use some of the features explained in the Unite 2017 talk (Game Architecture with Scriptable Objects)[https://www.youtube.com/watch?v=raQ3iHhE_Kk].
+I also use some of the features explained in the Unite 2017 talk [Game Architecture with Scriptable Objects](https://www.youtube.com/watch?v=raQ3iHhE_Kk).
 
 ### Runtime Sets
 
@@ -77,10 +77,8 @@ I learned about writing basic tests for Unity using Unity's Test Framework packa
 
 I wrote a few different tests for the DiceRoll helper class which takes a string and outputs a random number based on the parameters defined by the string, using the tabletop RPG diceroll notation. 
 
-<video controls="" width="800" height="500" muted="" loop="" autoplay="">
-<source src="./GitDocs/diceroll_unity_tests.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/122605754/220905766-7dea428b-daa6-4e8b-8b08-635d1b7b954a.mp4
 
-For example, e.g. "1d6" generates a random number from 1 to 6 (inclusive), and 2d6 generates two numbers 1-6 and sums them together, giving a total range or results from 2 to 12, with 7 being the most common result.
+For example, "1d6" generates a random number from 1 to 6 (inclusive), and 2d6 generates two numbers 1-6 and sums them together, giving a total range or results from 2 to 12, with 7 being the most common result.
 
 The tests check that the string is interpreted correctly, that the generated random numbers are within the expected minimum and maximum range, and perform a simple repeated result test which outputs a representation of the relative likelyhood of the various results (as a Gaussian curve).
