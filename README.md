@@ -42,9 +42,9 @@ I also use some of the features explained in the Unite 2017 talk [Game Architect
 
 ![Runtime Set Subscriber script](./GitDocs/runtime_set_subscriber.png)
 
-	I'm using Runtime Sets as a type of decoupled runtime lists of objects that exist in the game, which can be defined and renamed by designers (without writing extra code), and can be easily plugged in to multiple components of different objects without causing extra dependencies. 
+I'm using Runtime Sets as a type of decoupled runtime lists of objects that exist in the game, which can be defined and renamed by designers (without writing extra code), and can be easily plugged in to multiple components of different objects without causing extra dependencies. 
 	
-	When an object is made to use a specific runtime set, it's added to a list of objects of that set, which can be later referenced on other scripts and components. For example, it can be used to keep track of the number of asteroids on the screen, but also types of specific asteroids (e.g. metal asteroids) on the screen. 
+When an object is made to use a specific runtime set, it's added to a list of objects of that set, which can be later referenced on other scripts and components. For example, it can be used to keep track of the number of asteroids on the screen, but also types of specific asteroids (e.g. metal asteroids) on the screen. 
 
 I also use Scriptable Objects in the event system, described below. 
 
