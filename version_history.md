@@ -1,8 +1,6 @@
 # Space Game: ASTEROIDS
 ## version history (2023)
 
-### 0.2.01
-
 ### 0.1.03
 Feb 20th
 
