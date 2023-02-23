@@ -2,13 +2,12 @@
  
  ![Asteroids game screenshot](./GitDocs/asteroids_game.png)
 
-
-
+ 
  An asteroids clone, potentially with some progression elements down the line. 
 
+ If you're interested in the development process, you can also check the [version history](version_history.md) page.
 
-
- # Project goals
+  # Project goals
 
  This project is a practice project where I learn what's new in Unity since 2016 or so. Some of my personal learning goals were: 
 
